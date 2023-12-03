@@ -3,8 +3,8 @@ import utils
 import os
 local = True
 if local:
-    from dotenv import load_dotenv
-    load_dotenv()
+    OPENAI_API_KEY=st.secrets['OPENAI_API_KEY']
+    ACTIVELOOP_TOKEN=st.secrets['ACTIVELOOP_TOKEN']
 
 st.title("Chat with GitHub Repository")
 

@@ -6,8 +6,8 @@ import deeplake
 from queue import Queue
 local = True
 if local:
-    from dotenv import load_dotenv
-    load_dotenv()
+    OPENAI_API_KEY=st.secrets['OPENAI_API_KEY']
+    ACTIVELOOP_TOKEN=st.secrets['ACTIVELOOP_TOKEN']
 
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import DeepLake
