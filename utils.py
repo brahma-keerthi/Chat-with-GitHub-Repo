@@ -4,6 +4,7 @@ import git
 import os
 import deeplake
 from queue import Queue
+import streamlit as st
 local = True
 if local:
     OPENAI_API_KEY=st.secrets['OPENAI_API_KEY']
