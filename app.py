@@ -41,6 +41,6 @@ if user_repo:
 
     # Accept user input and display the results
     if prompt := st.text_input("Type your question here."):
-        response = embedder.retrieve_results(prompt)
+        # response = embedder.retrieve_results(prompt)
         st.write(response)
         
