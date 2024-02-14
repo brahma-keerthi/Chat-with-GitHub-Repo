@@ -1,4 +1,4 @@
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 import git
 import os
@@ -9,14 +9,14 @@ if local:
     from dotenv import load_dotenv
     load_dotenv()
 
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import DeepLake
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import DeepLake
+from langchain_community.embeddings import HuggingFaceEmbeddings
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
 model_kwargs = {"device": "cpu"}
 allowed_extensions = ['.py', '.ipynb', '.md', ]
 
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 
 class Embedder:
@@ -95,7 +95,7 @@ class Embedder:
         self.retriever = self.db.as_retriever()
         self.retriever.search_kwargs['distance_metric'] = 'cos'
         self.retriever.search_kwargs['fetch_k'] = 100
-        self.retriever.search_kwargs['maximal_marginal_relevance'] = True
+        # self.retriever.search_kwargs['maximal_marginal_relevance'] = True
         self.retriever.search_kwargs['k'] = 3
 
 
