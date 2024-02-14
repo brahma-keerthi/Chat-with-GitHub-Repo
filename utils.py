@@ -15,7 +15,7 @@ from langchain.vectorstores import DeepLake
 from langchain.embeddings import HuggingFaceEmbeddings
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
 model_kwargs = {"device": "cpu"}
-allowed_extensions = ['.py', '.ipynb', '.md', ]
+allowed_extensions = ['.py', '.ipynb', '.md', '.cpp', '.js', '.c', '.java', '.css', '.html', ]
 
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
