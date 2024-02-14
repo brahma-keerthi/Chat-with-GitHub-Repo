@@ -96,7 +96,7 @@ class Embedder:
         self.retriever = self.db.as_retriever()
         self.retriever.search_kwargs['distance_metric'] = 'cos'
         self.retriever.search_kwargs['fetch_k'] = 100
-        self.retriever.search_kwargs['maximal_marginal_relevance'] = True
+        # self.retriever.search_kwargs['maximal_marginal_relevance'] = True
         self.retriever.search_kwargs['k'] = 3
 
 
