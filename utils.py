@@ -101,7 +101,7 @@ class Embedder:
 
     def retrieve_results(self, query):
         chat_history = list(self.MyQueue.queue)
-        qa = ConversationalRetrievalChain.from_llm(self.model, chain_type="stuff", retriever=self.retriever, condense_question_llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo'))
+        qa = ConversationalRetrievalChain.from_llm(self.model, chain_type="stuff", retriever=self.retriever, condense_question_llm = ChatOpenAI(temperature=0, model='gpt-4-turbo'))
         result = qa({"question": query, "chat_history": chat_history})
         self.add_to_queue((query, result["answer"]))
         return result['answer']
